@@ -44,10 +44,6 @@ Receba em sua casa o melhor café do **MUNDO**. Nessa aplicação é possível c
   - [x] Salvar ids e quantidade de produtos no servidor
   - [x] Deixar salvo no servidor o endereço de entrega
 
-## Licença
-
-Este projeto está sob os termos da licença [MIT](license)
-
 <br />
 
 Feito com 💙 por [lhmoreno](https://github.com/lhmoreno)

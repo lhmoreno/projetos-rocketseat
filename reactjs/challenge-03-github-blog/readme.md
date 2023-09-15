@@ -35,10 +35,6 @@ A ideia deste projeto é utilizar as issues do github como um sistema de blog. C
 - [x] **Performance**
   - [x] Criar cache dos posts (react-query)
 
-## Licença
-
-Este projeto está sob os termos da licença [MIT](license)
-
 <br />
 
 Feito com 💙 por [lhmoreno](https://github.com/lhmoreno)
