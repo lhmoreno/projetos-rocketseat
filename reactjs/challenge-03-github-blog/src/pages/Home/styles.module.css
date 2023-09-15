@@ -1,0 +1,133 @@
+.profile {
+  background-color: var(--blue-700);
+  border-radius: 10px;
+  padding: 3.2rem 4.0rem;
+  display: flex;
+  gap: 3.2rem;
+  box-shadow: 0 2px 28px #0003;
+}
+
+.profile img {
+  width: 14.8rem;
+  height: 14.8rem;
+  border-radius: 8px;
+}
+
+.profile > div {
+  width: 100%;
+  position: relative;
+}
+
+.profile > div h2 {
+  font-size: 2.4rem;
+  margin-bottom: 0.8rem;
+  line-height: 130%;
+}
+
+.profile > div a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  line-height: 100%;
+}
+
+.profile > div a img {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.profile > div footer {
+  margin-top: 2.4rem;
+  display: flex;
+  gap: 2.4rem;
+}
+
+.profile > div footer span {
+  display: flex;
+  align-items: center;
+  line-height: 100%;
+  gap: 0.8rem;
+  color: var(--gray-200);
+}
+
+.profile > div footer span img {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.searchContainer {
+  margin-top: 7.2rem;
+}
+
+.searchContainer > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.searchContainer > div h4 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--gray-200);
+}
+
+.searchContainer > div span {
+  font-size: 1.4rem;
+  color: var(--gray-400);
+}
+
+.postsContainer {
+  margin-top: 4.8rem;
+  display: grid;
+  grid-template-columns: 41.6rem 41.6rem;
+  gap: 3.2rem;
+}
+
+.postsContainer > a {
+  height: 26.0rem;
+  background-color: var(--blue-600);
+  border-radius: 10px;
+  padding: 3.2rem;
+}
+
+.postsContainer > a header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.postsContainer > a header h3 {
+  font-size: 2.0rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.postsContainer > a header span {
+  width: 100%;
+  max-width: fit-content;
+  color: var(--gray-400);
+  font-size: 1.4rem;
+}
+
+.postsContainer > a main {
+  margin-top: 2.0rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.postsContainer > a main p {
+  color: var(--gray-300);
+}

@@ -1,0 +1,74 @@
+.postInfo {
+  background-color: var(--blue-700);
+  border-radius: 10px;
+  padding: 3.2rem 4.0rem;
+  box-shadow: 0 2px 28px #0003;;
+}
+
+.postInfo > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.postInfo > div a {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  line-height: 100%;
+}
+
+.postInfo > div a img {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.postInfo > h1 {
+  margin-top: 2.0rem;
+  font-size: 2.4rem;
+  line-height: 130%;
+}
+
+.postInfo > footer {
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 2.4rem;
+}
+
+.postInfo > footer span {
+  display: flex;
+  align-items: center;
+  line-height: 100%;
+  gap: 0.8rem;
+  color: var(--gray-200);
+}
+
+.postInfo > div footer span img {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.description {
+  padding: 4.0rem 3.2rem;
+}
+
+.description img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.description p {
+  margin-bottom: 1.6rem;
+}
+
+.description h1,
+.description h2, 
+.description h3,
+.description h4,
+.description h5,
+.description h6 {
+  margin-top: 2.4rem;
+  margin-bottom: 1.6rem;
+}

@@ -1,0 +1,14 @@
+.header {
+  background-size: cover;
+  height: 29.6rem;
+
+  display: flex;
+  justify-content: center;
+}
+
+.header img {
+  margin-top: 6.4rem;
+  width: 14.8rem;
+  height: 9.8rem;
+  object-fit: cover;
+}
