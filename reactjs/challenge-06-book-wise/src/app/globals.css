@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #181C2A;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background: #303F73;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #252D4A;
+}
+
+.h-loading-feed {
+  height: calc(100vh - 8rem);
+}
+
+.h-loading-books {
+  height: calc(100vh - 16rem);
+}
+
+.h-loading-profile {
+  height: calc(100vh - 8rem);
+}
