@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-base bg-gray-900 text-gray-100 antialiased;
+  }
+
+  .py-ul-products {
+    padding-left: calc((100vw - 96rem) / 2 + 2rem);
+    padding-right: calc((100vw - 96rem) / 2 + 2rem);
+  }
+
+  .product-background-linear-gradient {
+    background: linear-gradient(180deg, #1ea483 0%, #7465d4 100%)
+  }
+
+  @media (max-width: 96rem) {
+    .py-ul-products {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+}
