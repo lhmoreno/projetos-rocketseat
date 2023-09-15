@@ -1,0 +1,155 @@
+{
+  "coffees": [
+    {
+      "id": 1,
+      "imageUrl": "http://localhost:5173/coffees/expresso-tradicional.png",
+      "title": "Expresso Tradicional",
+      "description": "O tradicional café feito com água quente e grãos moídos",
+      "price": 8.7,
+      "tags": [
+        "Tradicional"
+      ]
+    },
+    {
+      "id": 2,
+      "imageUrl": "http://localhost:5173/coffees/expresso-americano.png",
+      "title": "Expresso Americano",
+      "description": "Expresso diluído, menos intenso que o tradicional",
+      "price": 9.9,
+      "tags": [
+        "Tradicional"
+      ]
+    },
+    {
+      "id": 3,
+      "imageUrl": "http://localhost:5173/coffees/expresso-cremoso.png",
+      "title": "Expresso Cremoso",
+      "description": "Café expresso tradicional com espuma cremosa",
+      "price": 18.5,
+      "tags": [
+        "Tradicional"
+      ]
+    },
+    {
+      "id": 4,
+      "imageUrl": "http://localhost:5173/coffees/expresso-gelado.png",
+      "title": "Expresso Gelado",
+      "description": "Bebida preparada com café expresso e cubos de gelo",
+      "price": 17.9,
+      "tags": [
+        "Tradicional",
+        "Gelado"
+      ]
+    },
+    {
+      "id": 5,
+      "imageUrl": "http://localhost:5173/coffees/cafe-com-leite.png",
+      "title": "Café com Leite",
+      "description": "Meio a meio de expresso tradicional com leite vaporizado",
+      "price": 19.9,
+      "tags": [
+        "Tradicional",
+        "Com leite"
+      ]
+    },
+    {
+      "id": 6,
+      "imageUrl": "http://localhost:5173/coffees/latte.png",
+      "title": "Latte",
+      "description": "Uma dose de café expresso com o dobro de leite e espuma cremosa",
+      "price": 5.8,
+      "tags": [
+        "Tradicional",
+        "Com leite"
+      ]
+    },
+    {
+      "id": 7,
+      "imageUrl": "http://localhost:5173/coffees/capuccino.png",
+      "title": "Capuccino",
+      "description": "Bebida com canela feita de doses iguais de café, leite e espuma",
+      "price": 6.9,
+      "tags": [
+        "Tradicional",
+        "Com leite"
+      ]
+    },
+    {
+      "id": 8,
+      "imageUrl": "http://localhost:5173/coffees/macchiato.png",
+      "title": "Macchiato",
+      "description": "Café expresso misturado com um pouco de leite quente e espuma",
+      "price": 12.9,
+      "tags": [
+        "Tradicional",
+        "Com leite"
+      ]
+    },
+    {
+      "id": 9,
+      "imageUrl": "http://localhost:5173/coffees/mocaccino.png",
+      "title": "Mocaccino",
+      "description": "Café expresso com calda de chocolate, pouco leite e espuma",
+      "price": 11,
+      "tags": [
+        "Tradicional",
+        "Com leite"
+      ]
+    },
+    {
+      "id": 10,
+      "imageUrl": "http://localhost:5173/coffees/chocolate-quente.png",
+      "title": "Chocolate Quente",
+      "description": "Bebida feita com chocolate dissolvido no leite quente e café",
+      "price": 9.9,
+      "tags": [
+        "Tradicional",
+        "Com leite"
+      ]
+    },
+    {
+      "id": 11,
+      "imageUrl": "http://localhost:5173/coffees/cubano.png",
+      "title": "Cubano",
+      "description": "Drink gelado de café expresso com rum, creme de leite e hortelã",
+      "price": 9,
+      "tags": [
+        "Tradicional",
+        "Alcoólico",
+        "Gelado"
+      ]
+    },
+    {
+      "id": 12,
+      "imageUrl": "http://localhost:5173/coffees/havaiano.png",
+      "title": "Havaiano",
+      "description": "Bebida adocicada preparada com café e leite de coco",
+      "price": 9.9,
+      "tags": [
+        "Especial"
+      ]
+    },
+    {
+      "id": 13,
+      "imageUrl": "http://localhost:5173/coffees/arabe.png",
+      "title": "Árabe",
+      "description": "Bebida preparada com grãos de café árabe e especiarias",
+      "price": 13,
+      "tags": [
+        "Especial"
+      ]
+    },
+    {
+      "id": 14,
+      "imageUrl": "http://localhost:5173/coffees/irlandes.png",
+      "title": "Irlandês",
+      "description": "Bebida a base de café, uísque irlandês, açúcar e chantilly",
+      "price": 15.9,
+      "tags": [
+        "Especial",
+        "Alcoólico"
+      ]
+    }
+  ],
+  "carts": []
+}
