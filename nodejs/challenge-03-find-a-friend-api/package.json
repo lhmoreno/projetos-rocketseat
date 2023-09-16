@@ -1,0 +1,23 @@
+{
+  "name": "find-a-friend-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest run --dir src/use-cases",
+    "test:watch": "vitest --dir src/use-cases"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/bcrypt": "5.0.0",
+    "@types/node": "20.1.1",
+    "typescript": "5.0.4",
+    "vite-tsconfig-paths": "4.2.0",
+    "vitest": "0.31.0"
+  },
+  "dependencies": {
+    "bcrypt": "5.1.0"
+  }
+}

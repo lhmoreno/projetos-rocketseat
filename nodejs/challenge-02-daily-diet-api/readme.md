@@ -18,6 +18,3 @@ npm run dev
 
 ## Rotas
 Todas as rotas estão descritas em um arquivo do [Insomnia](https://insomnia.rest/) em [insomnia.json](./insomnia.json)
-
-## Licença
-[MIT](license)
