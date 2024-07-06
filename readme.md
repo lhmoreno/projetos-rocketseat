@@ -20,6 +20,9 @@ Este é um repositório que contem meus projetos desenvolvidos juntamente a [Roc
 - [Coffee Delivery](reactjs/coffee-delivery)
   - Desenvolvido por mim
   - Um mini ecommerce de cafés. É possível adicionar cafés ao carrinho e pagar com algumas forma de pagamento.
+- [DT Money](reactjs/dt-money)
+  - Desenvolvido em aula
+  - App de gerenciamento das finanças. Nele é possível adicionar entradas, remover e filtrar.
 - [Github Blog](reactjs/github-blog)
   - Desenvolvido por mim
   - Utilizamos as issues do github como um sistema de blog. Cada issue corresponde a uma postagem em nosso GitHub Blog.
