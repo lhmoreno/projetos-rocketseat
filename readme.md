@@ -11,6 +11,9 @@ Este é um repositório que contem meus projetos desenvolvidos juntamente a [Roc
 - [Ignite Feed](reactjs/ignite-feed)
   - Desenvolvido em aula
   - Um projeto simples para treinar os fundamentos do ReactJS. Nele é possivel comentar, deletar e reagir a outros comentários.
+- [Todo List](reactjs/todo-list)
+  - Desenvolvido por mim
+  - Um projeto de todo list onde adicionei uma feature de ordenação de tarefas via arrasta e solta.
 - [Ignite Timer](reactjs/ignite-timer)
   - Desenvolvido em aula
   - Um timer para realizações de tarefas e com persistência do histórico em local storage.
