@@ -1,7 +1,7 @@
 {
   "coffees": [
     {
-      "id": 1,
+      "id": "1",
       "imageUrl": "http://localhost:5173/coffees/expresso-tradicional.png",
       "title": "Expresso Tradicional",
       "description": "O tradicional café feito com água quente e grãos moídos",
@@ -11,7 +11,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "imageUrl": "http://localhost:5173/coffees/expresso-americano.png",
       "title": "Expresso Americano",
       "description": "Expresso diluído, menos intenso que o tradicional",
@@ -21,7 +21,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "imageUrl": "http://localhost:5173/coffees/expresso-cremoso.png",
       "title": "Expresso Cremoso",
       "description": "Café expresso tradicional com espuma cremosa",
@@ -31,7 +31,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": "4",
       "imageUrl": "http://localhost:5173/coffees/expresso-gelado.png",
       "title": "Expresso Gelado",
       "description": "Bebida preparada com café expresso e cubos de gelo",
@@ -42,7 +42,7 @@
       ]
     },
     {
-      "id": 5,
+      "id": "5",
       "imageUrl": "http://localhost:5173/coffees/cafe-com-leite.png",
       "title": "Café com Leite",
       "description": "Meio a meio de expresso tradicional com leite vaporizado",
@@ -53,7 +53,7 @@
       ]
     },
     {
-      "id": 6,
+      "id": "6",
       "imageUrl": "http://localhost:5173/coffees/latte.png",
       "title": "Latte",
       "description": "Uma dose de café expresso com o dobro de leite e espuma cremosa",
@@ -64,7 +64,7 @@
       ]
     },
     {
-      "id": 7,
+      "id": "7",
       "imageUrl": "http://localhost:5173/coffees/capuccino.png",
       "title": "Capuccino",
       "description": "Bebida com canela feita de doses iguais de café, leite e espuma",
@@ -75,7 +75,7 @@
       ]
     },
     {
-      "id": 8,
+      "id": "8",
       "imageUrl": "http://localhost:5173/coffees/macchiato.png",
       "title": "Macchiato",
       "description": "Café expresso misturado com um pouco de leite quente e espuma",
@@ -86,7 +86,7 @@
       ]
     },
     {
-      "id": 9,
+      "id": "9",
       "imageUrl": "http://localhost:5173/coffees/mocaccino.png",
       "title": "Mocaccino",
       "description": "Café expresso com calda de chocolate, pouco leite e espuma",
@@ -97,7 +97,7 @@
       ]
     },
     {
-      "id": 10,
+      "id": "10",
       "imageUrl": "http://localhost:5173/coffees/chocolate-quente.png",
       "title": "Chocolate Quente",
       "description": "Bebida feita com chocolate dissolvido no leite quente e café",
@@ -108,7 +108,7 @@
       ]
     },
     {
-      "id": 11,
+      "id": "11",
       "imageUrl": "http://localhost:5173/coffees/cubano.png",
       "title": "Cubano",
       "description": "Drink gelado de café expresso com rum, creme de leite e hortelã",
@@ -120,7 +120,7 @@
       ]
     },
     {
-      "id": 12,
+      "id": "12",
       "imageUrl": "http://localhost:5173/coffees/havaiano.png",
       "title": "Havaiano",
       "description": "Bebida adocicada preparada com café e leite de coco",
@@ -130,7 +130,7 @@
       ]
     },
     {
-      "id": 13,
+      "id": "13",
       "imageUrl": "http://localhost:5173/coffees/arabe.png",
       "title": "Árabe",
       "description": "Bebida preparada com grãos de café árabe e especiarias",
@@ -140,7 +140,7 @@
       ]
     },
     {
-      "id": 14,
+      "id": "14",
       "imageUrl": "http://localhost:5173/coffees/irlandes.png",
       "title": "Irlandês",
       "description": "Bebida a base de café, uísque irlandês, açúcar e chantilly",
@@ -151,5 +151,24 @@
       ]
     }
   ],
-  "carts": []
+  "carts": [
+    {
+      "deliveryInfo": {
+        "cep": "18460-090",
+        "street": "Rua 24 de Outubro",
+        "number": 853,
+        "complement": "",
+        "district": "Velho",
+        "city": "Itararé",
+        "uf": "SP",
+        "payment": "money"
+      },
+      "coffees": [],
+      "id": "0899"
+    },
+    {
+      "id": "efec",
+      "coffees": []
+    }
+  ]
 }

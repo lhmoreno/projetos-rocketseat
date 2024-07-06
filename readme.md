@@ -17,6 +17,9 @@ Este é um repositório que contem meus projetos desenvolvidos juntamente a [Roc
 - [Ignite Timer](reactjs/ignite-timer)
   - Desenvolvido em aula
   - Um timer para realizações de tarefas e com persistência do histórico em local storage.
+- [Coffee Delivery](reactjs/coffee-delivery)
+  - Desenvolvido por mim
+  - Um mini ecommerce de cafés. É possível adicionar cafés ao carrinho e pagar com algumas forma de pagamento.
 - [Github Blog](reactjs/github-blog)
   - Desenvolvido por mim
   - Utilizamos as issues do github como um sistema de blog. Cada issue corresponde a uma postagem em nosso GitHub Blog.
