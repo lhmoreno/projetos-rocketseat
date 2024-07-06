@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="src/assets/ignite-logo.svg" alt="Logo mostrando um foguete ao lado do nome todoo" />
+  <img src="src/assets/logo-ignite.svg" alt="Logo mostrando um foguete ao lado do nome todoo" />
 </div>
 
 ## Descrição
