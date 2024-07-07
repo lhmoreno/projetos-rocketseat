@@ -1,31 +1,31 @@
-import type { GetStaticProps } from 'next'
+import type { GetStaticProps } from "next";
 
-import Head from 'next/head'
-import Link from 'next/link'
-import Image from 'next/image'
-import Stripe from 'stripe'
+import Head from "next/head";
+import Link from "next/link";
+import Image from "next/image";
+import Stripe from "stripe";
 
-import { stripe } from '../lib/stripe'
+import { stripe } from "../lib/stripe";
 
-import { BagIcon } from '../components/icons/BagIcon'
-import { handleCurrencyBRL } from '../utils/currency'
-import { useCart } from '../hooks/useCart'
-import { ProductsSlider } from '../components/ProductsSlider'
+import { BagIcon } from "../components/icons/BagIcon";
+import { handleCurrencyBRL } from "../utils/currency";
+import { useCart } from "../hooks/useCart";
+import { ProductsSlider } from "../components/ProductsSlider";
 
 export type Product = {
-  id: string
-  name: string
-  imageUrl: string
-  price: number
-  defaultPriceId: string
-}
+  id: string;
+  name: string;
+  imageUrl: string;
+  price: number;
+  defaultPriceId: string;
+};
 
 type StoreProps = {
-  products: Product[]
-}
+  products: Product[];
+};
 
 export default function Store({ products }: StoreProps) {
-  const { addProduct } = useCart()
+  const { addProduct } = useCart();
 
   return (
     <>
@@ -35,7 +35,7 @@ export default function Store({ products }: StoreProps) {
 
       <main className="h-full pb-32">
         <ProductsSlider>
-          {products.map(product => {
+          {products.map((product) => {
             return (
               <div
                 key={product.id}
@@ -67,35 +67,35 @@ export default function Store({ products }: StoreProps) {
                   </button>
                 </footer>
               </div>
-            )
+            );
           })}
         </ProductsSlider>
       </main>
     </>
-  )
+  );
 }
 
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await stripe.products.list({
-    expand: ['data.default_price']
-  })
+    expand: ["data.default_price"],
+  });
 
-  const products: Product[] = data.map(product => {
-    const price = product.default_price as Stripe.Price
+  const products: Product[] = data.map((product) => {
+    const price = product.default_price as Stripe.Price;
 
     return {
       id: product.id,
       name: product.name,
       imageUrl: product.images[0],
       price: price.unit_amount,
-      defaultPriceId: price.id
-    }
-  })
+      defaultPriceId: price.id,
+    };
+  });
 
   return {
     props: {
-      products
+      products,
     },
-    revalidate: 60 * 60 * 2 // 2 hours
-  }
-}
+    revalidate: 60 * 60 * 2, // 2 hours
+  };
+};
