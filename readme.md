@@ -29,3 +29,6 @@ Este é um repositório que contem meus projetos desenvolvidos juntamente a [Roc
 - [Ignite Shop](reactjs/ignite-shop)
   - Desenvolvido em aula e modificado por mim
   - Um e-commerce simples para venda de camisas. Encontre a camisa que combina com você, manipule o carrinho escolhendo quantas camisas quiser. Ao final de tudo, efetue o pagamento através da plataforma Stripe.
+- [Design System](reactjs/design-systems)
+  - Desenvolvido em aula e atualizado por mim
+  - Um projeto com Turbo Repo e Storybook.

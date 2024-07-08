@@ -1,0 +1,8 @@
+{
+  "extends": "@lhmoreno-ignite-ui/ts-config/react.json",
+  "compilerOptions": {
+    "moduleResolution": "node"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}

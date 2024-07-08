@@ -1,0 +1,23 @@
+{
+  "name": "lhmoreno-ignite-ui",
+  "private": true,
+  "scripts": {
+    "dev": "turbo dev --parallel",
+    "build": "turbo build",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo build --filter=!docs && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.7",
+    "turbo": "^2.0.6"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "npm@10.5.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}
