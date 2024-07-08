@@ -32,3 +32,6 @@ Este é um repositório que contem meus projetos desenvolvidos juntamente a [Roc
 - [Design System](reactjs/design-systems)
   - Desenvolvido em aula e atualizado por mim
   - Um projeto com Turbo Repo e Storybook.
+- [Ignite Call](reactjs/ignite-call)
+  - Desenvolvido em aula
+  - Este projeto vai te auxilar com agendamento de reuniões online (calls).
