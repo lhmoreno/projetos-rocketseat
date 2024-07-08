@@ -26,6 +26,9 @@ Este é um repositório que contem meus projetos desenvolvidos juntamente a [Roc
 - [Github Blog](reactjs/github-blog)
   - Desenvolvido por mim
   - Utilizamos as issues do github como um sistema de blog. Cada issue corresponde a uma postagem em nosso GitHub Blog.
+- [Pizza Shop](reactjs/pizza-shop)
+  - Desenvolvido em aula
+  - Dashboard para gestão do estabelecimento e controle de pedidos estilo iFood.
 - [Ignite Shop](reactjs/ignite-shop)
   - Desenvolvido em aula e modificado por mim
   - Um e-commerce simples para venda de camisas. Encontre a camisa que combina com você, manipule o carrinho escolhendo quantas camisas quiser. Ao final de tudo, efetue o pagamento através da plataforma Stripe.
