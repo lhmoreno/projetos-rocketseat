@@ -38,3 +38,9 @@ Este é um repositório que contem meus projetos desenvolvidos juntamente a [Roc
 - [Ignite Call](reactjs/ignite-call)
   - Desenvolvido em aula
   - Este projeto vai te auxilar com agendamento de reuniões online (calls).
+
+### Node.js
+
+- [Tasks API](nodejs/tasks-api)
+  - Desenvolvido por mim
+  - Um CRUD de tarefas com possibilidade de upload de um csv.
