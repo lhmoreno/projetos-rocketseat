@@ -24,17 +24,14 @@ export default function RatingHeader({
   return (
     <header className="flex gap-4">
       <Link
-        href={`/profile/${user.id}`}
+        href={`/profile/${user.slug}`}
         className="transition-opacity hover:opacity-80"
       >
-        <Avatar
-          src={user.image ?? ""}
-          alt={`Foto de perfil do(a) ${user.name}`}
-        />
+        <Avatar src={user.image} alt={`Foto de perfil do(a) ${user.name}`} />
       </Link>
 
       <div>
-        <Link href={`/profile/${user.id}`} className="hover:underline">
+        <Link href={`/profile/${user.slug}`} className="hover:underline">
           {user.name}
         </Link>
         <p className="text-sm text-gray-400">{distance}</p>

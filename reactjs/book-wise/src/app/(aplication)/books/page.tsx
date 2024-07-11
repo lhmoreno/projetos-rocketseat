@@ -1,3 +1,4 @@
+import { getBooks } from "@/app/api/books/route";
 import { BooksList } from "./books-list";
 
 export const metadata = {
@@ -6,5 +7,7 @@ export const metadata = {
 };
 
 export default async function Books() {
-  return <BooksList />;
+  const books = await getBooks();
+
+  return <BooksList data={books} />;
 }

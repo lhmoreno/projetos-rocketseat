@@ -2,18 +2,19 @@ import { Metadata } from "next";
 import NotAuthenticated from "../not-authenticated";
 import Profile from "../profile";
 import { getServerAuthSession } from "@/lib/auth";
-import { getProfileById } from "@/app/api/profile/route";
+import { getProfileBySlug } from "@/app/api/profile/route";
+import { notFound } from "next/navigation";
 
 interface PageProps {
   params: {
-    userId: string;
+    slug: string;
   };
 }
 
 type GenerateMetadata = (props: PageProps) => Promise<Metadata>;
 
 export const generateMetadata: GenerateMetadata = async ({ params }) => {
-  const data = await getProfileById(params.userId ?? "");
+  const data = await getProfileBySlug(params.slug);
 
   if (!data) {
     return { title: "Book Wise" };
@@ -31,10 +32,10 @@ export default async function Page({ params }: PageProps) {
     return <NotAuthenticated />;
   }
 
-  const data = await getProfileById(params.userId ?? "");
+  const data = await getProfileBySlug(params.slug);
 
   if (!data) {
-    return <NotAuthenticated />;
+    return notFound();
   }
 
   return <Profile data={data} />;

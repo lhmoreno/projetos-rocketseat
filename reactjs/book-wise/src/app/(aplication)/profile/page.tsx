@@ -1,8 +1,7 @@
 import { Metadata } from "next";
 import NotAuthenticated from "./not-authenticated";
-import Profile from "./profile";
 import { getServerAuthSession } from "@/lib/auth";
-import { getProfileByEmail } from "@/app/api/profile/route";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Seu Perfil | Book Wise",
@@ -16,11 +15,5 @@ export default async function Page() {
     return <NotAuthenticated />;
   }
 
-  const data = await getProfileByEmail(session.user.email ?? "");
-
-  if (!data) {
-    return <NotAuthenticated />;
-  }
-
-  return <Profile data={data} />;
+  redirect("/profile/" + session.user.slug);
 }

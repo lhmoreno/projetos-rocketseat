@@ -19,39 +19,25 @@ import { useQuery } from "@tanstack/react-query";
 
 type BookSidePanelProps = Dialog.DialogProps & {
   user?: User;
-  book: Book & {
-    rate: number;
-  };
+  book: Book;
 };
 
-type SearchBook = Book & {
-  rate: number;
-  categories: string[];
-  ratings: Array<
-    Rating & {
-      user: PrismaUser;
-    }
-  >;
-};
-
-export function BookSidePanel({
-  user,
-  book: defaultBook,
-  ...props
-}: BookSidePanelProps) {
+export function BookSidePanel({ user, book, ...props }: BookSidePanelProps) {
   const [showRateInput, setShowRateInput] = useState(false);
   const [rate, setRate] = useState(0);
 
-  const { data: book } = useQuery<SearchBook>({
-    queryKey: ["book", defaultBook.id],
-    queryFn: async () => {
-      const response = await fetch(`/api/books/${defaultBook.id}`);
+  const categories = book.categories as string[];
 
-      const data = await response.json();
+  // const { data: book } = useQuery<SearchBook>({
+  //   queryKey: ["book", defaultBook.id],
+  //   queryFn: async () => {
+  //     const response = await fetch(`/api/books/${defaultBook.id}`);
 
-      return data;
-    },
-  });
+  //     const data = await response.json();
+
+  //     return data;
+  //   },
+  // });
 
   async function toggleBook(book: Book) {}
 
@@ -74,11 +60,15 @@ export function BookSidePanel({
         <Dialog.Overlay className="bg-black/60 fixed inset-0 animate-dialogOverlay" />
 
         <Dialog.Content className="w-full max-w-2xl bg-gray-800 fixed top-0 bottom-0 right-0 px-12 py-16 overflow-y-scroll">
+          <Dialog.Title className="hidden">{book.name}</Dialog.Title>
+          <Dialog.Description className="hidden">
+            {book.summary}
+          </Dialog.Description>
           {book && (
             <div className="px-8 py-6 bg-gray-700 rounded-lg rounded-xl">
               <div className="flex gap-8">
                 <Image
-                  src={book.cover_url}
+                  src={book.coverUrl}
                   alt=""
                   className="rounded-xl"
                   width={167}
@@ -91,7 +81,7 @@ export function BookSidePanel({
                   <div className="mt-auto">
                     <RateStars rate={book.rate} className="text-xl" />
                     <p className="mt-1.5 text-sm text-gray-400">
-                      {book.ratings.length} avaliações
+                      {book.ratingsAmount} avaliações
                     </p>
                   </div>
                 </div>
@@ -102,7 +92,7 @@ export function BookSidePanel({
                   <div>
                     <p className="text-sm text-gray-300">Categoria</p>
                     <strong className="text-gray-200">
-                      {book.categories?.join(", ")}
+                      {categories.join(", ")}
                     </strong>
                   </div>
                 </div>
@@ -110,9 +100,7 @@ export function BookSidePanel({
                   <i className="ph ph-book-open text-green-100 text-2xl" />
                   <div>
                     <p className="text-sm text-gray-300">Páginas</p>
-                    <strong className="text-gray-200">
-                      {book.total_pages}
-                    </strong>
+                    <strong className="text-gray-200">{book.totalPages}</strong>
                   </div>
                 </div>
               </div>
@@ -191,8 +179,8 @@ export function BookSidePanel({
                 </div>
               )}
 
-              <ul className="mt-3 flex flex-col gap-3">
-                {book?.ratings.map((rating) => {
+              {/* <ul className="mt-3 flex flex-col gap-3">
+                {ratings.map((rating) => {
                   return (
                     <li key={rating.id} className="bg-gray-700 rounded-lg p-6">
                       <RatingHeader
@@ -205,7 +193,7 @@ export function BookSidePanel({
                     </li>
                   );
                 })}
-              </ul>
+              </ul> */}
             </div>
           </div>
 
