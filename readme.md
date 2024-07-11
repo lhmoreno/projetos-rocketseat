@@ -44,6 +44,6 @@ Este é um repositório que contem meus projetos desenvolvidos juntamente a [Roc
 - [Tasks API](nodejs/tasks-api)
   - Desenvolvido por mim
   - Um CRUD de tarefas com possibilidade de upload de um csv.
-- [Daily Diet API](nodejs/tasks-api)
+- [Daily Diet API](nodejs/daily-diet-api)
   - Desenvolvido por mim
   - Um API simples para gerenciar o controle da sua dieta.

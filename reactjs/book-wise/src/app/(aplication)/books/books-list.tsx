@@ -1,10 +1,12 @@
 "use client";
 
+import { BookSidePanel } from "@/components/book-side-panel";
 import RateStars from "@/components/rate-stars";
 import { Book, Category } from "@prisma/client";
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useState } from "react";
 
 function stylesLinkActive(active?: boolean) {
   if (active) {
@@ -75,59 +77,70 @@ export function BooksList() {
         >
           Tudo
         </button>
-        {!!categories &&
-          categories.map((category) => {
-            const wasActive = params.includes(category.name);
+        {categories?.map((category) => {
+          const wasActive = params.includes(category.name);
 
-            return (
-              <button
-                key={category.id}
-                className={stylesLinkActive(wasActive)}
-                onClick={() =>
-                  !wasActive
-                    ? handleAddCategory(category.name)
-                    : handleRemoveCategory(category.name)
-                }
-              >
-                {category.name}
-              </button>
-            );
-          })}
+          return (
+            <button
+              key={category.id}
+              className={stylesLinkActive(wasActive)}
+              onClick={() =>
+                !wasActive
+                  ? handleAddCategory(category.name)
+                  : handleRemoveCategory(category.name)
+              }
+            >
+              {category.name}
+            </button>
+          );
+        })}
       </nav>
 
       {!isLoading ? (
         <div className="grid grid-cols-3 gap-4">
-          {books &&
-            books.map((book) => {
-              return (
-                <div
-                  key={book.id}
-                  className="px-5 py-4 bg-gray-700 rounded-lg flex gap-5"
-                >
-                  {/* <ButtonOpenSidePanel type="image" book={book}> */}
-                  <Image src={book.cover_url} alt="" width={107} height={150} />
-                  {/* </ButtonOpenSidePanel> */}
-                  <div className="flex-1 flex flex-col py-1">
-                    {/* <ButtonOpenSidePanel type="text" book={book}> */}
-                    <strong className="line-clamp-2">{book.name}</strong>
-                    {/* </ButtonOpenSidePanel> */}
-                    <p className="text-sm text-gray-400">{book.author}</p>
-
-                    <div className="mt-auto">
-                      <RateStars rate={book.rate} />
-                      <p className="mt-1.5 text-sm text-gray-400">
-                        {book.rate} avaliações
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+          {books?.map((book) => {
+            return <BookWithPanel key={book.id} data={book} />;
+          })}
         </div>
       ) : (
         <FallbackBooks />
       )}
     </div>
+  );
+}
+
+function BookWithPanel({ data }: { data: Book & { rate: number } }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <div className="px-5 py-4 bg-gray-700 rounded-lg flex gap-5">
+        <button
+          className="transition-opacity hover:opacity-80"
+          onClick={() => setOpen(true)}
+        >
+          <Image src={data.cover_url} alt="" width={107} height={150} />
+        </button>
+        <div className="flex-1 flex flex-col py-1">
+          <button
+            className="text-left hover:underline"
+            onClick={() => setOpen(true)}
+          >
+            <strong className="line-clamp-2">{data.name}</strong>
+          </button>
+          <p className="text-sm text-gray-400">{data.author}</p>
+
+          <div className="mt-auto">
+            <RateStars rate={data.rate} />
+            <p className="mt-1.5 text-sm text-gray-400">
+              {data.rate} avaliações
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <BookSidePanel open={open} onOpenChange={setOpen} book={data} />
+    </>
   );
 }
 

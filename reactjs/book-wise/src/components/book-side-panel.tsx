@@ -2,33 +2,64 @@
 
 import Image from "next/image";
 import * as Dialog from "@radix-ui/react-dialog";
-import { PropsWithChildren, createContext, useContext, useState } from "react";
+import {
+  PropsWithChildren,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 import RateStars from "./rate-stars";
-import { Book } from "@prisma/client";
+import { Book, Rating, User as PrismaUser } from "@prisma/client";
 import { User } from "next-auth";
+import Avatar from "./ui/avatar";
+import RatingHeader from "./rating-header";
+import { useQuery } from "@tanstack/react-query";
 
-type BookSidePanelProps = {
+type BookSidePanelProps = Dialog.DialogProps & {
   user?: User;
-  book: Book;
+  book: Book & {
+    rate: number;
+  };
 };
 
-export function BookSidePanel({ user, book }: BookSidePanelProps) {
-  const [open, setOpen] = useState(false);
+type SearchBook = Book & {
+  rate: number;
+  categories: string[];
+  ratings: Array<
+    Rating & {
+      user: PrismaUser;
+    }
+  >;
+};
+
+export function BookSidePanel({
+  user,
+  book: defaultBook,
+  ...props
+}: BookSidePanelProps) {
   const [showRateInput, setShowRateInput] = useState(false);
   const [rate, setRate] = useState(0);
 
-  async function toggleBook(book: Book) {
-    setOpen(true);
-  }
+  const { data: book } = useQuery<SearchBook>({
+    queryKey: ["book", defaultBook.id],
+    queryFn: async () => {
+      const response = await fetch(`/api/books/${defaultBook.id}`);
+
+      const data = await response.json();
+
+      return data;
+    },
+  });
+
+  async function toggleBook(book: Book) {}
 
   function handleOpen(value: boolean) {
     if (!value) {
       setShowRateInput(false);
       setRate(0);
     }
-
-    setOpen(value);
   }
 
   function handleOpenRateInput() {
@@ -38,7 +69,7 @@ export function BookSidePanel({ user, book }: BookSidePanelProps) {
   }
 
   return (
-    <Dialog.Root open={open} onOpenChange={handleOpen}>
+    <Dialog.Root {...props}>
       <Dialog.Portal>
         <Dialog.Overlay className="bg-black/60 fixed inset-0 animate-dialogOverlay" />
 
@@ -58,9 +89,9 @@ export function BookSidePanel({ user, book }: BookSidePanelProps) {
                   <p className="mt-2 text-gray-400">{book.author}</p>
 
                   <div className="mt-auto">
-                    {/* <RateStars rate={book.rate_average} className="text-xl" /> */}
+                    <RateStars rate={book.rate} className="text-xl" />
                     <p className="mt-1.5 text-sm text-gray-400">
-                      {/* {book.rate_length} avaliações */}
+                      {book.ratings.length} avaliações
                     </p>
                   </div>
                 </div>
@@ -71,7 +102,7 @@ export function BookSidePanel({ user, book }: BookSidePanelProps) {
                   <div>
                     <p className="text-sm text-gray-300">Categoria</p>
                     <strong className="text-gray-200">
-                      {book.categories.map((c) => c.name).join(", ")}
+                      {book.categories?.join(", ")}
                     </strong>
                   </div>
                 </div>
@@ -107,7 +138,7 @@ export function BookSidePanel({ user, book }: BookSidePanelProps) {
                 <div className="bg-gray-700 rounded-lg p-6">
                   <header className="flex items-center gap-4">
                     <Avatar
-                      src={user.avatar_url}
+                      src={user.image ?? ""}
                       alt={`Foto de perfil do(a) ${user.name}`}
                       size="md"
                     />
@@ -161,7 +192,7 @@ export function BookSidePanel({ user, book }: BookSidePanelProps) {
               )}
 
               <ul className="mt-3 flex flex-col gap-3">
-                {ratings.map((rating) => {
+                {book?.ratings.map((rating) => {
                   return (
                     <li key={rating.id} className="bg-gray-700 rounded-lg p-6">
                       <RatingHeader
@@ -189,29 +220,5 @@ export function BookSidePanel({ user, book }: BookSidePanelProps) {
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
-  );
-}
-
-interface ButtonOpenSidePanel extends React.PropsWithChildren {
-  type: "text" | "image";
-  book: Book;
-}
-
-const styles = {
-  text: "text-left hover:underline",
-  image: "transition-opacity hover:opacity-80",
-};
-
-export default function ButtonOpenSidePanel({
-  children,
-  type,
-  book,
-}: ButtonOpenSidePanel) {
-  const { toggleBook } = useSidePanel();
-
-  return (
-    <button className={styles[type]} onClick={() => toggleBook(book)}>
-      {children}
-    </button>
   );
 }
