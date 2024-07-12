@@ -75,7 +75,7 @@ async function main() {
         createdAt,
         updatedAt: faker.datatype.boolean({ probability: 0.3 })
           ? add(createdAt, { months: 1 })
-          : undefined,
+          : createdAt,
       } as Rating;
     });
 

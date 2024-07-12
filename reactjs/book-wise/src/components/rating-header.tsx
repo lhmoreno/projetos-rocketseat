@@ -1,21 +1,28 @@
 import Link from "next/link";
 import Avatar from "./ui/avatar";
 import RateStars from "./rate-stars";
-import { formatDistanceToNow } from "date-fns";
+import { compareDesc, formatDistanceToNow } from "date-fns";
 import { ptBR } from "date-fns/locale";
-import { User } from "@prisma/client";
 
 interface RatingHeaderProps {
-  user: User;
-  createdAt: Date;
+  user: {
+    name: string;
+    image: string;
+    slug: string;
+  };
+  createdAt: string;
+  updatedAt: string;
   rate: number;
 }
 
 export default function RatingHeader({
   user,
   createdAt,
+  updatedAt,
   rate,
 }: RatingHeaderProps) {
+  const updatedAtIsRecent = !!compareDesc(updatedAt, createdAt);
+
   const distance = formatDistanceToNow(createdAt, {
     locale: ptBR,
     addSuffix: true,
@@ -34,7 +41,9 @@ export default function RatingHeader({
         <Link href={`/profile/${user.slug}`} className="hover:underline">
           {user.name}
         </Link>
-        <p className="text-sm text-gray-400">{distance}</p>
+        <p className="text-sm text-gray-400">
+          {distance} {updatedAtIsRecent && "(editado)"}
+        </p>
       </div>
       <RateStars rate={rate} className="ml-auto" />
     </header>

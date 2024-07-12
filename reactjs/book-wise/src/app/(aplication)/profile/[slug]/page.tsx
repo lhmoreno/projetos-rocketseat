@@ -4,6 +4,7 @@ import Profile from "../profile";
 import { getServerAuthSession } from "@/lib/auth";
 import { getProfileBySlug } from "@/app/api/profile/route";
 import { notFound } from "next/navigation";
+import { getRatingsByUserId } from "@/app/api/ratings/route";
 
 interface PageProps {
   params: {
@@ -38,5 +39,7 @@ export default async function Page({ params }: PageProps) {
     return notFound();
   }
 
-  return <Profile data={data} />;
+  const ratings = await getRatingsByUserId(data.id);
+
+  return <Profile data={data} ratings={ratings} />;
 }

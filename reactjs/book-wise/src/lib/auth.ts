@@ -8,7 +8,7 @@ import { prisma } from "./prisma";
 declare module "next-auth" {
   interface Session extends DefaultSession {
     user: {
-      id: undefined;
+      id: string;
       slug: string;
       name: string;
       email: string;
@@ -17,7 +17,7 @@ declare module "next-auth" {
   }
 
   interface User {
-    id: undefined;
+    id: string;
     slug: string;
     name: string;
     email: string;
@@ -49,6 +49,7 @@ export const authOptions: NextAuthOptions = {
         user: {
           ...session.user,
           slug: user.slug,
+          id: user.id,
         },
       };
     },

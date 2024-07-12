@@ -11,7 +11,7 @@ export const metadata = {
 
 export default async function Home() {
   const [ratings, popularBooks] = await Promise.all([
-    getRatings(),
+    getRatings({ page: 1 }),
     getPopularBooks(),
   ]);
 
