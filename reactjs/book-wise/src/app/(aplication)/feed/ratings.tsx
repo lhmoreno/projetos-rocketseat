@@ -9,9 +9,9 @@ import {
   useInfiniteQuery,
 } from "@tanstack/react-query";
 import { useEffect, useRef, useState } from "react";
-import { RatingsPage } from "@/app/api/ratings/route";
 import { BookSidePanel } from "@/components/book-side-panel";
 import { Book, Rating as PrismaRating, User } from "@prisma/client";
+import { RatingsPage } from "@/lib/api/get-ratings";
 
 export function Ratings({ data: list }: { data: RatingsPage }) {
   const {
@@ -101,7 +101,8 @@ function Rating({
     <li key={rating.id} className="h-[17.5rem] bg-gray-700 rounded-lg p-6">
       <RatingHeader
         user={rating.user}
-        createdAt={rating.createdAt}
+        createdAt={rating.createdAt.toISOString()}
+        updatedAt={rating.updatedAt.toISOString()}
         rate={rating.rate}
       />
       <main className="mt-8 flex gap-5">

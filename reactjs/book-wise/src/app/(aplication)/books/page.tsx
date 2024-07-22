@@ -1,4 +1,4 @@
-import { getBooks } from "@/app/api/books/route";
+import { getBooks } from "@/lib/api/get-books";
 import { BooksList } from "./books-list";
 
 export const metadata = {

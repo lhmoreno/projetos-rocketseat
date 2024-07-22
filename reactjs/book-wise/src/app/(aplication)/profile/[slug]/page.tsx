@@ -2,9 +2,9 @@ import { Metadata } from "next";
 import NotAuthenticated from "../not-authenticated";
 import Profile from "../profile";
 import { getServerAuthSession } from "@/lib/auth";
-import { getProfileBySlug } from "@/app/api/profile/route";
 import { notFound } from "next/navigation";
-import { getRatingsByUserId } from "@/app/api/ratings/route";
+import { getProfileBySlug } from "@/lib/api/get-profile";
+import { getRatingsByUserId } from "@/lib/api/get-ratings";
 
 interface PageProps {
   params: {

@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { getRatings } from "@/app/api/ratings/route";
-import { getPopularBooks } from "@/app/api/books/popular/route";
 import { Ratings } from "./ratings";
 import { PopularBooks } from "./popular-books";
+import { getRatings } from "@/lib/api/get-ratings";
+import { getPopularBooks } from "@/lib/api/get-popular-books";
 
 export const metadata = {
   title: "Início | Book Wise",
