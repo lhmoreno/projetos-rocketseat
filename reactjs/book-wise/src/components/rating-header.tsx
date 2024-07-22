@@ -10,8 +10,8 @@ interface RatingHeaderProps {
     image: string;
     slug: string;
   };
-  createdAt: string;
-  updatedAt: string;
+  createdAt: string | Date;
+  updatedAt: string | Date;
   rate: number;
 }
 

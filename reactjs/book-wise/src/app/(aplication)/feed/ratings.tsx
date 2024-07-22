@@ -101,8 +101,8 @@ function Rating({
     <li key={rating.id} className="h-[17.5rem] bg-gray-700 rounded-lg p-6">
       <RatingHeader
         user={rating.user}
-        createdAt={rating.createdAt.toISOString()}
-        updatedAt={rating.updatedAt.toISOString()}
+        createdAt={rating.createdAt}
+        updatedAt={rating.updatedAt}
         rate={rating.rate}
       />
       <main className="mt-8 flex gap-5">
